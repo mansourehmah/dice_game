@@ -107,7 +107,63 @@ body {
   color: white;
   text-transform: uppercase;
 }
+.wrapper {
+  height: 85%;
+}
+.game {
+  height: 80%;
+  padding: 30px;
+}
+.equal {
+  height: 20%;
+  background-color: rgba(255, 166, 0, 0.74);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.equal > h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: rgb(41, 41, 82);
+}
+.equal > h3 {
+  color: white;
+  font-size: 40px;
+  transition-delay: 2s;
+}
 
+.rubic {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.parent-rubic {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  /* background-color: white; */
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  /* animation-play-state: paused; */
+  animation-timing-function: cubic-bezier(0.07, 1.12, 0.67, 0.77);
+}
+.parent-rubic > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-image: radial-gradient(gray, rgb(54, 53, 53));
+  color: orange;
+  font-size: 60px;
+}
 .players {
   position: relative;
   overflow: hidden;
@@ -122,4 +178,48 @@ body {
   z-index: 200;
   transition: 0.4s;
   transform: translateZ(100px);
+}
+
+#winner-two,
+#winner-one {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: orange;
+  box-shadow: 0px 0px 15px rgb(194, 126, 0);
+  z-index: 300;
+  top: -100%;
+  left: 0;
+}
+#winner-two > h2,
+#winner-one > h2 {
+  width: 100%;
+  padding: 15px 30px;
+  font-size: 60px;
+  color: rgb(41, 41, 95);
+  font-weight: bold;
+  text-align: center;
+}
+#winner-two > button,
+#winner-one > button {
+  width: 70%;
+  height: 80px;
+  background-color: rgb(41, 41, 95);
+  color: orange;
+  border: 5px solid rgb(133, 102, 46);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+.active {
+  top: 0 !important;
 }

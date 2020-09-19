@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="css/animations.css" />
   </head>
   <body>
     <div class="main">
@@ -33,11 +34,55 @@
       <div class="play">
         <div id="first-player" class="players">
           <h2></h2>
+          <div class="wrapper">
+            <div class="game">
+              <div class="rubic" onclick="_rand()">
+                <div class="parent-rubic" id="rubic-one">
+                  <span class="one">1</span>
+                  <span class="two">2</span>
+                  <span class="three">3</span>
+                  <span class="four">4</span>
+                  <span class="five">5</span>
+                  <span class="six">6</span>
+                </div>
+              </div>
+            </div>
+            <div class="equal">
+              <h2>your score</h2>
+              <h3 class="score-one">0</h3>
+            </div>
+          </div>
           <div id="first-player-deactive"></div>
+          <div id="winner-one">
+            <h2>You are winner :)))</h2>
+            <button onclick="play_again()">play again</button>
+          </div>
         </div>
         <div id="secound-player" class="players">
           <h2></h2>
+          <div class="wrapper">
+            <div class="game">
+              <div class="rubic" onclick="_rand()">
+                <div class="parent-rubic" id="rubic-two">
+                  <span class="one">1</span>
+                  <span class="two">2</span>
+                  <span class="three">3</span>
+                  <span class="four">4</span>
+                  <span class="five">5</span>
+                  <span class="six">6</span>
+                </div>
+              </div>
+            </div>
+            <div class="equal">
+              <h2>your score</h2>
+              <h3 class="score-two">0</h3>
+            </div>
+          </div>
           <div id="secound-player-deactive"></div>
+          <div id="winner-two">
+            <h2>You are winner :)))</h2>
+            <button onclick="play_again()">play again</button>
+          </div>
         </div>
       </div>
     </div>

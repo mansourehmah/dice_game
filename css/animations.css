@@ -1,0 +1,90 @@
+.one {
+  transform: translateZ(50px);
+}
+.three {
+  transform: translateZ(-50px) scaleY(-1) rotateZ(-180deg);
+}
+.two {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.four {
+  transform: rotateY(90deg) translateZ(-50px) scaleX(-1);
+}
+.five {
+  transform: rotateX(90deg) translateZ(50px);
+}
+.six {
+  transform: rotateX(90deg) translateZ(-50px) scaleY(-1);
+}
+@keyframes one {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 2, 0.5, 3600deg);
+  }
+}
+@keyframes two {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 2, 0.5, 3600deg) rotateY(-90deg);
+  }
+}
+@keyframes three {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 2, 0.5, 3600deg) rotateY(-180deg);
+  }
+}
+@keyframes four {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 2, 0.5, 3600deg) rotateY(90deg);
+  }
+}
+@keyframes five {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 2, 0.5, 3600deg) rotateX(-90deg);
+  }
+}
+@keyframes six {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(3, 2, 1, 3600deg) rotateX(90deg);
+  }
+}
+.anime-one {
+  animation-name: one;
+  animation-play-state: running;
+}
+.anime-two {
+  animation-name: two;
+  animation-play-state: running;
+}
+.anime-three {
+  animation-name: three;
+  animation-play-state: running;
+}
+.anime-four {
+  animation-name: four;
+  animation-play-state: running;
+}
+.anime-five {
+  animation-name: five;
+  animation-play-state: running;
+}
+.anime-six {
+  animation-name: six;
+  animation-play-state: running;
+}
