@@ -92,9 +92,10 @@ body {
   transition-delay: 1s;
   display: flex;
 }
-#first-player, #second-player {
+#first-player,
+#second-player {
   position: absolute;
-  top : 0;
+  top: 0;
   transition: 0.4s;
   border-right: 1px solid blanchedalmond;
 }

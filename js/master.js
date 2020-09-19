@@ -175,14 +175,13 @@ window.onresize = function () {
   if (width > 767) {
     document.getElementById("first-player").style.top = "0";
     document.getElementById("second-player").style.top = "0%";
-  }
-  else{
+  } else {
     if (which_player % 2 == 0) {
-        document.getElementById("first-player").style.top = "0";
-        document.getElementById("second-player").style.top = "100%";
-      } else {
-        document.getElementById("first-player").style.top = "100%";
-        document.getElementById("second-player").style.top = "0%";
-      }
+      document.getElementById("first-player").style.top = "0";
+      document.getElementById("second-player").style.top = "100%";
+    } else {
+      document.getElementById("first-player").style.top = "100%";
+      document.getElementById("second-player").style.top = "0%";
+    }
   }
 };
