@@ -172,7 +172,17 @@ function play_again() {
 //resize window
 window.onresize = function () {
   width = window.innerWidth;
-  if (width < 767 && width > 760) {
-    location.reload();
+  if (width > 767) {
+    document.getElementById("first-player").style.top = "0";
+    document.getElementById("second-player").style.top = "0%";
+  }
+  else{
+    if (which_player % 2 == 0) {
+        document.getElementById("first-player").style.top = "0";
+        document.getElementById("second-player").style.top = "100%";
+      } else {
+        document.getElementById("first-player").style.top = "100%";
+        document.getElementById("second-player").style.top = "0%";
+      }
   }
 };
