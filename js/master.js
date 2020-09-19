@@ -1,7 +1,6 @@
 var which_player = 0,
   score = [0, 0],
-  noawards = true;
-endgame = false;
+  noAwards = true;
 
 function start() {
   var name = [];
@@ -14,16 +13,15 @@ function start() {
     name[1] = "user2";
   }
   document.getElementsByClassName("start")[0].style.top = "-100%";
-
-  //start game
   document.getElementsByClassName("play")[0].style.top = "0";
   document.querySelector("#first-player>h2").innerHTML = name[0];
   document.querySelector("#secound-player>h2").innerHTML = name[1];
+
   _play();
 }
 
 function _play() {
-  if (!endgame) {
+  if (noAwards) {
     if (which_player % 2 == 0) {
       document.getElementById("first-player-deactive").style.top = "-100%";
       document.getElementById("secound-player-deactive").style.top = "0";
@@ -33,15 +31,14 @@ function _play() {
     }
   }
 }
-// render random number
+
 function _rand() {
   var random_number;
   _play();
-  if (noawards) {
+  if (noAwards) {
     random_number = Math.floor(Math.random() * 6 + 1);
-    noawards = false;
   } else {
-    noawards = true;
+    noAwards = true;
     random_number = Math.floor(Math.random() * 5 + 1);
   }
   document.getElementById("rubic-one").setAttribute("class", "parent-rubic");
@@ -122,7 +119,6 @@ function _rand() {
       document.getElementsByClassName("score-two")[0].innerHTML = score[1];
     }
     if (score[which_player % 2] >= 10) {
-      endgame = true;
       if (which_player % 2 == 0) {
         document.getElementById("secound-player-deactive").style.top = "0";
         document.getElementById("winner-one").setAttribute("class", "active");
@@ -135,13 +131,30 @@ function _rand() {
   }
   setTimeout(set_score, 2000);
   setTimeout(_reapet, 2200);
+
   function _reapet() {
-    if (score[(which_player - 1) % 2] < 30) {
+    if (score[(which_player - 1) % 2] < 10) {
       if (random_number == 6) {
         which_player--;
-        noawards = true;
+        noAwards = false;
       }
       _play();
     }
   }
+}
+
+function play_again() {
+  random_number = 0;
+  score[0] = 0;
+  score[1] = 0;
+  j = 0;
+  which_player = 0;
+  noAwards = true;
+  document.getElementById("secound-player-deactive").style.top = "-100%";
+  document.getElementById("winner-one").removeAttribute("class");
+  document.getElementById("first-player-deactive").style.top = "-100%";
+  document.getElementById("winner-two").removeAttribute("class");
+  document.getElementsByClassName("score-one")[0].innerHTML = 0;
+  document.getElementsByClassName("score-two")[0].innerHTML = 0;
+  _rand();
 }
