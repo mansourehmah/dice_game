@@ -43,6 +43,7 @@ body {
   font-weight: bold;
   font-size: 22px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .start > div > input {
   margin: 7px;
@@ -79,4 +80,46 @@ body {
 }
 .start-click:hover {
   background-color: rgb(245, 224, 119);
+}
+.play {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.651);
+  transition: 1s;
+  transition-delay: 1s;
+  display: flex;
+}
+#first-player {
+  border-right: 1px solid blanchedalmond;
+}
+.play > div {
+  width: 50%;
+}
+.play > div > h2 {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.players {
+  position: relative;
+  overflow: hidden;
+}
+#first-player-deactive,
+#secound-player-deactive {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.77);
+  left: 0;
+  z-index: 200;
+  transition: 0.4s;
+  transform: translateZ(100px);
 }
