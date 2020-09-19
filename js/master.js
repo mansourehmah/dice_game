@@ -2,10 +2,12 @@ var which_player = 0,
   score = [0, 0],
   noAwards = true;
 
+var width = window.innerWidth;
+
 function start() {
   var name = [];
   name[0] = document.getElementById("first").value;
-  name[1] = document.getElementById("secound").value;
+  name[1] = document.getElementById("second").value;
   if (name[0] == "") {
     name[0] = "user1";
   }
@@ -15,7 +17,7 @@ function start() {
   document.getElementsByClassName("start")[0].style.top = "-100%";
   document.getElementsByClassName("play")[0].style.top = "0";
   document.querySelector("#first-player>h2").innerHTML = name[0];
-  document.querySelector("#secound-player>h2").innerHTML = name[1];
+  document.querySelector("#second-player>h2").innerHTML = name[1];
 
   _play();
 }
@@ -24,10 +26,18 @@ function _play() {
   if (noAwards) {
     if (which_player % 2 == 0) {
       document.getElementById("first-player-deactive").style.top = "-100%";
-      document.getElementById("secound-player-deactive").style.top = "0";
+      document.getElementById("second-player-deactive").style.top = "0";
+      if (width < 767) {
+        document.getElementById("first-player").style.top = "0";
+        document.getElementById("second-player").style.top = "100%";
+      }
     } else {
       document.getElementById("first-player-deactive").style.top = "0";
-      document.getElementById("secound-player-deactive").style.top = "-100%";
+      document.getElementById("second-player-deactive").style.top = "-100%";
+      if (width < 767) {
+        document.getElementById("first-player").style.top = "100%";
+        document.getElementById("second-player").style.top = "0%";
+      }
     }
   }
 }
@@ -120,7 +130,7 @@ function _rand() {
     }
     if (score[which_player % 2] >= 30) {
       if (which_player % 2 == 0) {
-        document.getElementById("secound-player-deactive").style.top = "0";
+        document.getElementById("second-player-deactive").style.top = "0";
         document.getElementById("winner-one").setAttribute("class", "active");
       } else {
         document.getElementById("first-player-deactive").style.top = "0";
@@ -150,7 +160,7 @@ function play_again() {
   j = 0;
   which_player = 0;
   noAwards = true;
-  document.getElementById("secound-player-deactive").style.top = "-100%";
+  document.getElementById("second-player-deactive").style.top = "-100%";
   document.getElementById("winner-one").removeAttribute("class");
   document.getElementById("first-player-deactive").style.top = "-100%";
   document.getElementById("winner-two").removeAttribute("class");
@@ -158,3 +168,11 @@ function play_again() {
   document.getElementsByClassName("score-two")[0].innerHTML = 0;
   _rand();
 }
+
+//resize window
+window.onresize = function () {
+  width = window.innerWidth;
+  if (width < 767 && width > 760) {
+    location.reload();
+  }
+};

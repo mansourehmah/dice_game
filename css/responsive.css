@@ -1,0 +1,13 @@
+@media screen and (min-width: 767px) {
+  #first-player,
+  #second-player {
+    position: relative;
+  }
+  .play > div {
+    width: 50%;
+  }
+  .start > div > input{
+    width: 40%;
+    font-size: 18px;
+  }
+}
