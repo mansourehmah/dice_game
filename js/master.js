@@ -118,7 +118,7 @@ function _rand() {
       score[1] = score[1] + random_number;
       document.getElementsByClassName("score-two")[0].innerHTML = score[1];
     }
-    if (score[which_player % 2] >= 10) {
+    if (score[which_player % 2] >= 30) {
       if (which_player % 2 == 0) {
         document.getElementById("secound-player-deactive").style.top = "0";
         document.getElementById("winner-one").setAttribute("class", "active");
@@ -133,7 +133,7 @@ function _rand() {
   setTimeout(_reapet, 2200);
 
   function _reapet() {
-    if (score[(which_player - 1) % 2] < 10) {
+    if (score[(which_player - 1) % 2] < 30) {
       if (random_number == 6) {
         which_player--;
         noAwards = false;
